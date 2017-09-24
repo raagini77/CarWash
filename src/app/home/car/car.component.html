@@ -1,0 +1,29 @@
+
+<div class="image">
+    
+
+<h1>Car Details</h1>
+<img src="http://washmecarwashes.co/wp-content/uploads/b2b/stock/v2/bigstock/Blue-car-washing-on-open-air-14775710.jpg">
+        <form >
+           <label> Car Model Name:</label><br>
+            <input type="text" #carModelName value="Ford">
+            <br>
+            <label>License Plate Number :</label><br>
+            <input type="number" #licenceNumber  (focusout)="regis()">
+            <p *ngIf= "LicenceNumber" style ="color:red">Please Enter your License plate Number</p>
+            <br><br>
+            <label>Mud Condition:</label>
+           <input type="radio" name="gender" value="mud" #mud (click)="getMudCondition(mud.value)"> <b>Mud</b>
+        <input type="radio" name="gender" value="No Mud" #nomud (click)="getMudCondition(nomud.value)"> <b>No Mud </b><br>
+        <p *ngIf= "selectMudType" style ="color:red">Please select the Mud type </p>
+        <h1>Total Amount: {{BaseCarAmount}}</h1>
+
+        <p *ngIf= "StolenCar" style ="color:red">This car is stolen. Police on the way</p>
+
+         <!--Promo Code <input type= "text" #code ><button (click)="discount(code.value)">Apply</button>-->
+        
+          
+        <input type="submit" class="btn btn-primary" value="Submit" (click)="submit(licenceNumber.value)">
+    </form>  
+ <h1 *ngIf= "register" style ="color:green; text-align:center">Successfully registered for car wash</h1>
+</div>

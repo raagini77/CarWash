@@ -1,0 +1,28 @@
+<div class="image">
+    
+
+<h1><u>Truck Details</u></h1><br>
+<img src="https://www.dultmeier.com/images/home-carwash-main.jpg">
+        <form>
+           <label> Truck Model Name:</label><br>
+            <input type="text" #carModelName value="Ram">
+            <br>
+           <label> License Plate Number :</label><br>
+            <input type="number" #licenceNumber  (focusout)="regis()">
+            <p *ngIf= "LicenceNumber" style ="color:red">Please Enter your License plate Number</p>
+            <br><br>
+            <label> Truck with Bed let down:</label>
+           <input type="radio" name="gender" value="Yes" #bed (click)="getBedCondition(bed.value)"><b>Yes</b>
+        <input type="radio" name="gender" value="No" #nobed (click)="getBedCondition(nobed.value)"> <b>No </b> <br>
+        <p *ngIf= "selectBedType" style ="color:red">Please select the Truck condition </p>
+        <h1>Total Amount: {{BaseTruckAmount}}</h1>
+
+        <p *ngIf= "StolenTruck" style ="color:red">This Truck is stolen. Police on the way</p>
+
+         <!--Promo Code <input type= "text" #code ><button (click)="discount(code.value)">Apply</button>-->
+        
+          
+        <input type="submit" class="btn btn-primary" value="Submit" (click)="submit(licenceNumber.value)">
+    </form>  
+<h1 *ngIf= "register" style ="color:green; text-align:center">Successfully registered for car wash</h1>
+</div>>
